@@ -1,0 +1,23 @@
+<div class="section about">
+    <div class="well well-lg">
+        {% if app.user %}
+            <p>
+                {{ 'hello'|trans|raw }} {{ app.user.username }}
+            </p>
+        {% endif %}
+        {% if app.user %}
+            <p style="font-size: 2em" class="text-center">
+            <a href="{{ path('security_logout') }}">
+                <i class="fa fa-sign-out"></i> {{ 'menu.logout'|trans }}
+            </a>
+            </p>
+        {% else %}
+            <p style="font-size: 2em" class="text-center">
+            <a href="{{ path('security_login_form') }}">
+                <i class="fa fa-sign-in"></i> {{ 'action.sign_in'|trans }}
+            </a>
+            </p>
+        {% endif %}
+    </div>
+</div>
+<!-- Fragment rendered on {{ 'now'|localizeddate('long', 'long') }} -->
